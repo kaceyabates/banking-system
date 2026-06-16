@@ -1,0 +1,51 @@
+---
+references:
+  - "File: /bank_account_cli.py"
+generationTime: 2026-06-16T03:02:57.708Z
+---
+classDiagram
+    class Customer {
+        +String customer_id
+        +String first_name
+        +String last_name
+        +String address
+        +from_row(tuple row) Customer$
+    }
+    class Account {
+        +String account_id
+        +String customer_id
+        +String account_type
+        +float balance
+        +from_row(tuple row) Account$
+    }
+    class BankDB {
+        +Path db_path
+        +__init__(Path db_path) void
+        +init_db() void
+        +normalize_account_type(String account_type) String$
+        +get_customer(String customer_id) Customer
+        +get_account(String account_id) Account
+        +create_customer(Customer customer) void
+        +create_account(Account account) void
+        +deposit(String account_id, float amount) float
+        +withdraw(String account_id, float amount) float
+        +loan_service(String customer_id, String service_id, String service_name, float amount) String
+        +credit_card_service(String customer_id, float credit_limit) String
+        +list_accounts(String account_type, String customer_id) List~Account~
+        +list_customers(String account_type) List~Customer~
+    }
+    class BankCLI {
+        +BankDB db
+        +__init__(BankDB db) void
+        +prompt_yes_no(String message, boolean default) boolean$
+        +prompt_for_customer_data() Customer$
+        +prompt_for_account_data() Account$
+        +prompt_for_transaction_data() tuple$
+        +prompt_for_loan_data() tuple$
+        +prompt_for_credit_card_data() tuple$
+        +interactive_menu() int
+        +process_command(argparse.Namespace args) int
+    }
+    BankCLI *-- BankDB : db
+    BankDB --> Customer
+    BankDB --> Account

@@ -1,0 +1,30 @@
+# Common libraries
+requests
+numpy
+pandas
+scikit-learn
+matplotlib
+
+# Data engineering
+pyarrow
+fastparquet
+s3fs
+boto3
+google-cloud-storage
+sqlalchemy
+psycopg2-binary
+dask[dataframe]
+kafka-python
+snowflake-connector-python
+dbt-core
+great_expectations
+
+# Dev / QA tools
+black
+flake8
+pytest
+mypy
+
+# Notes:
+# - Some packages (e.g., apache-airflow, pyspark) are large or have extra system
+#   dependencies; add them when you intend to install and configure them.
