@@ -24,7 +24,3 @@ black
 flake8
 pytest
 mypy
-
-# Notes:
-# - Some packages (e.g., apache-airflow, pyspark) are large or have extra system
-#   dependencies; add them when you intend to install and configure them.

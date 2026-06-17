@@ -1,5 +1,6 @@
-# Bank Account CLI
+# Banking System
 
+This script provides an interfact for managing a banking system including customers, accounts and transactions in 'bank.db'
 This CLI script provides a fully functional interface for managing customers, accounts, and transactions in `bank.db`.
 
 ## Supported commands
